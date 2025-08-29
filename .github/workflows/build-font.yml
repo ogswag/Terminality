@@ -2,7 +2,7 @@ name: Build Iosevka Font
 
 on:
   push:
-    branches: [develop]
+    branches: [main]
     tags:               # Trigger on any tag push (e.g., "v1.0.0")
       - 'v*'            # Only tags starting with 'v' (semantic versioning)
   workflow_dispatch:
