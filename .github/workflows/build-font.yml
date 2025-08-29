@@ -1,0 +1,60 @@
+name: Build Iosevka Font
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required for artifact upload
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          path: config-repo
+
+      - name: Clone Iosevka repository
+        run: |
+          git clone --depth 1 https://github.com/be5invis/Iosevka.git iosevka
+
+      - name: Copy custom config
+        run: |
+          cp config-repo/Terminality.toml iosevka/private-build-plans.toml
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            libfreetype6-dev \
+            libfontconfig1-dev \
+            libpng-dev \
+            libjpeg-dev \
+            python3 \
+            ttfautohint \
+            git \
+            nodejs \
+            npm
+
+      - name: Install npm dependencies & build font
+        run: |
+          cd iosevka
+          npm install
+          npm run build -- ttf::Terminality --jCmd=4
+
+      - name: Package fonts
+        run: |
+          cd iosevka
+          ls -R dist
+          find ./dist/
+          zip -r $GITHUB_WORKSPACE/Terminality.zip ./dist/*
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Terminality
+          path: Terminality.zip

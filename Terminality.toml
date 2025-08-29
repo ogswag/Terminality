@@ -1,0 +1,152 @@
+[buildPlans.Terminality]
+family = "Terminality"
+spacing = "term"
+serifs = "sans"
+noCvSs = false
+exportGlyphNames = true
+
+  [buildPlans.Terminality.namingOverride]
+  copyright = 'Copyright 2025-{{currentYear}}, Renzhi Li (aka. Belleve Invis, belleve@typeof.net). Custom version made by Alexander Zakharov (github.com/ogswag)'
+  licence = '''This font software is licenced under the SIL Open Font Licence, Version 1.1. This licence is available with a FAQ at: http://scripts.sil.org/OFL. This font software is distributed on an 'AS IS' basis, without warranties or conditions of any kind, either express or implied. See the SIL Open Font licence for the specific language, permissions and limitations governing your use of this font software.'''
+  manufacturer = 'Belleve Invis (Iosevka), Alexander Zakharov (Terminality)'
+  designer = 'Belleve Invis (Iosevka), Alexander Zakharov (Terminality version)'
+  urlVendor = 'https://github.com/ogswag/Terminality'
+  urlDesigner = 'https://github.com/ogswag/Terminality'
+  description = 'Terminality — the font made for out of love for JetBrains Mono and Iosevka with customizations made according to my style.'
+
+  [buildPlans.Terminality.metricOverride]
+  # leading = 1100    # Line height. default = 1250
+  xHeight = 540     # Height of x. default = 520
+
+  [buildPlans.Terminality.variants]
+  inherits = "ss14"
+
+    [buildPlans.Terminality.variants.design]
+    one = "no-base"
+    seven = "bend-serifless-crossbar"
+    capital-g = "toothed-serifless-hooked"
+    capital-i = "short-serifed"
+    capital-j = "serifless"
+    capital-q = "closed-swash"
+    capital-w = "straight-asymmetric-serifless"
+    f = "serifless"
+    g = "double-storey-open"
+    j = "serifed"
+    l = "tailed-serifed"
+    t = "bent-hook"
+    w = "straight-asymmetric-serifless"
+    capital-lambda = "straight-top-serifed"
+    lower-lambda = "tailed-turn"
+    lower-upsilon = "straight-serifed"
+    lower-chi = "semi-chancery-curly-serifless"
+    lower-psi = "serifless"
+    tilde = "low"
+    asterisk = "hex-high"
+    lig-ltgteq = "flat"
+    lig-neq = "slightly-slanted-dotted"
+
+    [buildPlans.Terminality.variants.italic]
+    one = "no-base"
+    seven = "bend-serifless-crossbar"
+    capital-g = "toothed-serifless-hooked"
+    capital-i = "short-serifed"
+    capital-j = "serifless"
+    capital-q = "closed-swash"
+    capital-w = "straight-asymmetric-serifless"
+    f = "diagonal-tailed"
+    g = "single-storey-serifless"
+    i = "serifed-diagonal-tailed"
+    j = "diagonal-tailed-serifless"
+    l = "serifed-diagonal-tailed"
+    r = "top-serifed"
+    t = "diagonal-tailed"
+    u = "toothed-serifless"
+    v = "cursive-serifless"
+    w = "cursive-serifless"
+    x = "chancery"
+    y = "cursive-serifless"
+    z = "cursive"
+    capital-lambda = "straight-top-serifed"
+    lower-lambda = "tailed-turn"
+    lower-chi = "semi-chancery-curly-serifless"
+    lower-psi = "serifless"
+    tilde = "low"
+    asterisk = "hex-high"
+    lig-ltgteq = "flat"
+    lig-neq = "slightly-slanted-dotted"
+
+
+  [buildPlans.Terminality.ligations]
+  inherits = "clike"
+  enables = [
+    "lteq-separate", # lteq-separate: Display <= as separate shape.
+    "eqlt-separate", # eqlt-separate: Display =< as separate shape.
+    "gteq-separate", # gteq-separate: Display >= as separate shape.
+    "brst", # center asterisk in (* and *).
+    "slash-asterisk", # Shift asterisk in /* and */.
+    "center-ops", # Vertically align some of the operators (like *) to the center position it is before or after a "center" operator (like +).
+    "center-op-trigger-plus-minus-l", # Plus (+) and Minus (-) will trigger other operator characters at left to be centered.
+    "center-op-trigger-plus-minus-r", # Plus (+) and Minus (-) will trigger other operator characters at right to be centered.
+    "center-op-trigger-equal-l", # Equal (=) will trigger other operator characters at left to be centered.
+    "center-op-trigger-equal-r", # Equal (=) will trigger other operator characters at right to be centered.
+    "center-op-trigger-angle-inside", # Less (<) and Greater (>) will trigger other operator characters at inside to be centered.
+    "center-op-trigger-angle-outside", # Less (<) and Greater (>) will trigger other operator characters at outside to be centered.
+    "center-op-influence-colon", # Treat colon (:) as operator and perform chained centering.
+    "llgg", # Enable ligation for <<, >> and other angle-bracket chaining.
+    "llggeq", # Enable ligation for <<=, >>= as shift operator.
+    "eqexeq-dl", # Enable special ligation for =!= with double lines.
+  ]
+  disables = [
+    "eqeqeq", #  Enable special ligation for === with triple lines.
+    "eqeq", # Enable ligation for == and ===.
+    "lteq", # Enable ligation for <= as less-than-or-equal sign.
+    "eqlt", # Enable ligation for =< as less-than-or-equal sign.
+    "gteq", # Enable ligation for >= as greater-than-or-equal sign.
+    "kern-dotty", # Move connecting dotty punctuations closer, like for ::, ::: and ...
+    "kern-bars", # Move consecutive bars closer, like for ||, ||| and //.
+    "minus-minus", # Make 2 or more contiguous hyphen-minuses (like --, --- and ----) connected as a straight solid line.
+    "minus-minus-minus", # Make 3 or more contiguous hyphen-minuses (like --- and ----) connected as a straight solid line.
+    "plus-plus", # Make 2 or more contiguous plus signs (like ++, +++ and ++++) connected..
+    "plus-plus-plus", # Make 3 or more contiguous plus signs (like +++ and ++++) connected..
+    "underscore-underscore", # Make 2 or more contiguous underscores (like __, ___ and ____) connected.
+    "underscore-underscore-underscore", # Make 3 or more contiguous underscores (like ___ and ____) connected.
+    "hash-hash", # Make 2 or more contiguous hash signs (number signs) (like ##, ### and ####) connected.
+    "hash-hash-hash", # Make 3 or more contiguous hash signs (number signs) (like ## and ###) connected.
+  ]
+
+[buildPlans.Terminality.weights.Light]
+shape = 250 # default = 300
+menu = 300
+css = 300
+
+[buildPlans.Terminality.weights.Regular]
+shape = 425 # default = 400
+menu = 400
+css = 400
+
+[buildPlans.Terminality.weights.Bold]
+shape = 750 # default = 700
+menu = 700
+css = 700
+
+[buildPlans.Terminality.widths.Normal]
+shape = 525 # default = 500
+menu = 5
+css = "normal"
+
+[buildPlans.Terminality.widths.Extended]
+shape = 575 # default = 600
+menu = 7
+css = "expanded"
+
+[buildPlans.Terminality.slopes.Upright]
+angle = 0
+shape = "upright"
+menu = "upright"
+css = "normal"
+
+[buildPlans.Terminality.slopes.Italic]
+angle = 12.4
+shape = "italic"
+menu = "italic"
+css = "italic"
