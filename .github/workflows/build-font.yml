@@ -3,7 +3,7 @@ name: Build Iosevka Font
 on:
   push:
     branches: [develop]
-    tags:               # 👉 NEW: Trigger on ANY tag push (e.g., "v1.0.0")
+    tags:               # Trigger on any tag push (e.g., "v1.0.0")
       - 'v*'            # Only tags starting with 'v' (semantic versioning)
   workflow_dispatch:
 
@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: config-repo
-          fetch-depth: 0  # 👉 CRITICAL: Needed for git describe
+          fetch-depth: 0  # Needed for git describe
 
       - name: Clone Iosevka repository
         run: |
@@ -55,13 +55,12 @@ jobs:
           zip -r $GITHUB_WORKSPACE/Terminality.zip ./dist/*
 
       - name: Upload artifact (for non-tag builds)
-        if: github.ref_name != '' && !startsWith(github.ref, 'refs/tags/')  # 👉 Skip for tags
+        if: github.ref_name != '' && !startsWith(github.ref, 'refs/tags/')  #  Skip for tags
         uses: actions/upload-artifact@v4
         with:
           name: Terminality
           path: Terminality.zip
 
-      # 👇 NEW RELEASE SECTION 👇
       - name: Create Release
         if: startsWith(github.ref, 'refs/tags/')  # Only run for tags
         id: create_release
