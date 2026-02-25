@@ -48,26 +48,6 @@ Normal and Extended widths
 > [!IMPORTANT]
 > Download the latest release from the [Releases page](https://github.com/ogswag/Terminality/releases) and install the font files to your system.
 
-### Building from Source
-
-1. Clone the repository:
-```bash
-git clone https://github.com/ogswag/Terminality.git
-cd Terminality
-```
-
-2. The font will automatically build on push to the `main` branch or when creating a new tag (e.g., `v1.0.0`)
-
-3. Alternatively, you can build manually using the GitHub Actions interface.
-
-## Customization
-
-The font is built using the Iosevka build system. To customize further:
-
-1. Modify `Terminality.toml` to adjust design parameters
-2. Push changes to trigger a rebuild
-3. Download the updated font from the latest release
-
 ## License
 
 - The font software is licensed under the [SIL Open Font License, Version 1.1](http://scripts.sil.org/OFL)
@@ -82,10 +62,3 @@ The font is built using the Iosevka build system. To customize further:
 ## Contributing
 
 Contributions and suggestions are welcome! Please open an issue or pull request to discuss changes.
-
-## Support
-
-If you encounter any issues or have questions:
-1. Check existing issues on GitHub
-2. Create a new issue with details about the problem
-3. Include screenshots if relevant to font rendering issues
